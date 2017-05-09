@@ -1,8 +1,0 @@
-prefix=/home/robtech/robtech/install
-
-Name: utrobotex
-Description: Description of utrobotex
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/robtech/robtech/install/lib 
-Requires: 

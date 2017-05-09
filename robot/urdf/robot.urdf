@@ -1,0 +1,414 @@
+<robot
+  name="robot">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.00037895335732121 0.0310155463514687 0.0200312402116766"
+        rpy="0 0 0" />
+      <mass
+        value="0.627316470260235" />
+      <inertia
+        ixx="0.00347302805018214"
+        ixy="-6.51725895032495E-06"
+        ixz="4.30057970993278E-06"
+        iyy="0.00718021484703484"
+        iyz="-5.33626052666001E-05"
+        izz="0.004836447237774" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/vamp/Robot_Design_Project/src/robot/meshes/base_link.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/vamp/Robot_Design_Project/src/robot/meshes/base_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="camera_mount">
+    <inertial>
+      <origin
+        xyz="0.0090224249021572 0.0372418983116361 -0.0223535065335887"
+        rpy="0 0 0" />
+      <mass
+        value="0.997871992559891" />
+      <inertia
+        ixx="0.00461490653379808"
+        ixy="0.000212842066301842"
+        ixz="6.52224202073724E-05"
+        iyy="0.00581164560634355"
+        iyz="0.000827996965375599"
+        izz="0.00688820166559477" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/vamp/Robot_Design_Project/src/robot/meshes/camera_mount.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/vamp/Robot_Design_Project/src/robot/meshes/camera_mount.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camera"
+    type="fixed">
+    <origin
+      xyz="0.00027321 -0.017427 0.0675"
+      rpy="1.5708 -1.2468E-16 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="camera_mount" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="switch">
+    <inertial>
+      <origin
+        xyz="0.00683529023138499 0.120176768811187 0.0133273339038407"
+        rpy="0 0 0" />
+      <mass
+        value="0.0118933712539809" />
+      <inertia
+        ixx="0.000219188210680251"
+        ixy="5.99104609118307E-07"
+        ixz="2.33486495565134E-07"
+        iyy="6.27780117420354E-06"
+        iyz="7.88705426125084E-06"
+        izz="0.000214338621626491" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/vamp/Robot_Design_Project/src/robot/meshes/switch.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/vamp/Robot_Design_Project/src//robot/meshes/switch.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="switch"
+    type="fixed">
+    <origin
+      xyz="0.1353 -0.00065 0.0104"
+      rpy="3.1416 0 -1.5708" />
+    <parent
+      link="camera_mount" />
+    <child
+      link="switch" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="dribbler">
+    <inertial>
+      <origin
+        xyz="-0.0190255623536938 -0.00155923806734374 0.00919064387371567"
+        rpy="0 0 0" />
+      <mass
+        value="0.0909817709267928" />
+      <inertia
+        ixx="0.000157354484219938"
+        ixy="-6.86691180270608E-06"
+        ixz="4.89008303848963E-06"
+        iyy="4.82916240012287E-05"
+        iyz="2.89549410653395E-06"
+        izz="0.000166527842521243" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/vamp/Robot_Design_Project/src/robot/meshes/dribbler.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/vamp/Robot_Design_Project/src/robot/meshes/dribbler.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="dribbler"
+    type="fixed">
+    <origin
+      xyz="0.0036185 0.12921 -0.10007"
+      rpy="0 -0.71381 -3.1416" />
+    <parent
+      link="switch" />
+    <child
+      link="dribbler" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="kicker">
+    <inertial>
+      <origin
+        xyz="-0.000915760571552652 0.00277809694697621 0.0138762211723698"
+        rpy="0 0 0" />
+      <mass
+        value="0.0280918745056958" />
+      <inertia
+        ixx="3.11543487727532E-05"
+        ixy="-2.07579681857036E-07"
+        ixz="-9.07287828785343E-08"
+        iyy="3.17124370807986E-05"
+        iyz="2.75239361190618E-07"
+        izz="3.28631154320579E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/vamp/Robot_Design_Project/src/robot/meshes/kicker.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/vamp/Robot_Design_Project/src/robot/meshes/kicker.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="kicker"
+    type="fixed">
+    <origin
+      xyz="-0.0082812 -0.0058127 0.065634"
+      rpy="-0.68839 -0.20643 -1.815" />
+    <parent
+      link="dribbler" />
+    <child
+      link="kicker" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="lower_part">
+    <inertial>
+      <origin
+        xyz="-0.0288256058384871 0.00878916394072048 0.0300551368468727"
+        rpy="0 0 0" />
+      <mass
+        value="0.473333206033046" />
+      <inertia
+        ixx="0.00199330516158503"
+        ixy="0.000198188661920345"
+        ixz="0.000397275622433806"
+        iyy="0.00507035086119666"
+        iyz="-8.6964947430286E-05"
+        izz="0.00319060155083932" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/vamp/Robot_Design_Project/src/robot/meshes/lower_part.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/vamp/Robot_Design_Project/src/robot/meshes/lower_part.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base"
+    type="fixed">
+    <origin
+      xyz="0.0043829 -0.013296 0.048849"
+      rpy="0 0 0.31842" />
+    <parent
+      link="kicker" />
+    <child
+      link="lower_part" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="wheel1">
+    <inertial>
+      <origin
+        xyz="0.0199368110046076 -0.00279101404070672 0.019178629941365"
+        rpy="0 0 0" />
+      <mass
+        value="0.136494796901688" />
+      <inertia
+        ixx="0.000139803383992906"
+        ixy="1.87280925633021E-08"
+        ixz="9.00547048854227E-08"
+        iyy="0.000137909907156541"
+        iyz="1.07273932750833E-05"
+        izz="5.81878080180121E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/vamp/Robot_Design_Project/src/robot/meshes/wheel1.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/vamp/Robot_Design_Project/src/robot/meshes/wheel1.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel"
+    type="fixed">
+    <origin
+      xyz="-0.019825 0.03 0.082475"
+      rpy="0 0 0" />
+    <parent
+      link="lower_part" />
+    <child
+      link="wheel1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="wheel2_3">
+    <inertial>
+      <origin
+        xyz="0.0640202557788331 -0.00279101388741235 -0.0571233992256668"
+        rpy="0 0 0" />
+      <mass
+        value="0.272989713417391" />
+      <inertia
+        ixx="0.00180766305748599"
+        ixy="9.29957203244553E-06"
+        ixz="0.000953629164326267"
+        iyy="0.00239568024129217"
+        iyz="5.34746592486052E-06"
+        izz="0.000708180029017862" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/vamp/Robot_Design_Project/src/robot/meshes/wheel2_3.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/vamp/Robot_Design_Project/src/robot/meshes/wheel2_3.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel2"
+    type="fixed">
+    <origin
+      xyz="0.10144 0 -0.10647"
+      rpy="-3.1416 1.0472 -3.1416" />
+    <parent
+      link="wheel1" />
+    <child
+      link="wheel2_3" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

@@ -1,2 +1,0 @@
-utrobotex
--DCATKIN_DEVEL_PREFIX=/home/robtech/robtech/devel -DCMAKE_INSTALL_PREFIX=/home/robtech/robtech/install -G Unix Makefiles
